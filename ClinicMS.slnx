@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="libman.json" />
+  </Folder>
+  <Project Path="ClinicMS.Api/ClinicMS.Api.csproj" Id="e9defb26-32be-4ca4-96a8-235f75ec9e5d" />
+  <Project Path="ClinicMS.Application/ClinicMS.Application.csproj" Id="4d6b100f-79a0-42a5-8ccd-45afd4fb72c7" />
+  <Project Path="ClinicMS.Domain/ClinicMS.Domain.csproj" Id="95353b77-9905-4513-aad7-040702e0027d" />
+  <Project Path="ClinicMS.Infrastructure/ClinicMS.Infrastructure.csproj" Id="033eb609-8a00-48ab-9258-e1b611bef2ad" />
+  <Project Path="ClinicMS.Shared/ClinicMS.Shared.csproj" Id="de5a5372-1a0c-4cfb-80ff-5411ae1ac196" />
+  <Project Path="ClinicMS.Web/ClinicMS.Web.csproj" Id="1d469585-84f5-4124-ad2a-07d185f49a19" />
+</Solution>

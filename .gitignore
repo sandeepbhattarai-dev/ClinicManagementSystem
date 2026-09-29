@@ -1,0 +1,197 @@
+lib/
+appsettings.Development.json
+
+# ============================================================
+# .NET / ASP.NET Core
+# ============================================================
+
+## Build output
+[Bb]in/
+[Oo]bj/
+
+## Test results
+[Tt]est[Rr]esults/
+*.trx
+*.coverage
+*.coveragexml
+
+## .NET generated files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# NuGet cache/config files
+.nuget/
+packages/
+
+# ============================================================
+# Visual Studio
+# ============================================================
+
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# ============================================================
+# Visual Studio generated files
+# ============================================================
+
+*.userprefs
+*.rsuser
+*.DotSettings.user
+
+# ============================================================
+# ASP.NET Core
+# ============================================================
+
+# Development configuration
+appsettings.Development.json
+
+# Local environment variables
+.env
+.env.*
+!.env.example
+
+# User secrets
+secrets.json
+
+# ASP.NET Core generated files
+wwwroot/lib/
+
+# ============================================================
+# Logs
+# ============================================================
+
+*.log
+logs/
+Log/
+Logs/
+
+# ============================================================
+# Database / Local development
+# ============================================================
+
+# Local database files
+*.mdf
+*.ldf
+*.ndf
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# ============================================================
+# Entity Framework Core
+# ============================================================
+
+# EF generated migration bundles
+*.bundle
+
+# ============================================================
+# OS generated files
+# ============================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ============================================================
+# Temporary files
+# ============================================================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ============================================================
+# Publish / Deployment
+# ============================================================
+
+publish/
+Publish/
+*.publishsettings
+
+# Azure publish profiles
+Properties/PublishProfiles/*.pubxml
+Properties/PublishProfiles/*.pubxml.user
+
+# ============================================================
+# Certificates / Security
+# ============================================================
+
+*.pfx
+*.p12
+*.key
+*.pem
+
+# ============================================================
+# Docker
+# ============================================================
+
+docker-compose.override.yml
+
+# ============================================================
+# Node / Frontend (if Clean Architecture contains frontend)
+# ============================================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output for frontend
+dist/
+build/
+
+# ============================================================
+# Coverage
+# ============================================================
+
+coverage/
+.coverage/
+*.lcov
+
+# ============================================================
+# Local development files
+# ============================================================
+
+*.local
+*.local.json
+
+# ============================================================
+# Backup files
+# ============================================================
+
+*.orig
+*.rej
