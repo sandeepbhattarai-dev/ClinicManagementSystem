@@ -5,10 +5,7 @@ namespace ClinicMS.Infrastructure.Data
 {
   public class ApplicationDbContext : DbContext
   {
-    public ApplicationDbContext()
-    {
-
-    }
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
     public DbSet<utblAppointment> utblAppointments { get; set; }
     public DbSet<utblDoctor> utblDoctors { get; set; }
