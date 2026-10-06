@@ -15,5 +15,25 @@ namespace ClinicMS.Infrastructure.Data
     public DbSet<utblPatient> utblPatients { get; set; }
     public DbSet<utblPrescription> utblPrescriptions { get; set; }
     public DbSet<utblPrescriptionItem> utblPrescriptionsItem { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      base.OnModelCreating(modelBuilder);
+
+      modelBuilder.HasSequence<int>("PatientSeq")
+        .StartsAt(1)
+        .IncrementsBy(1);
+
+      modelBuilder.HasSequence<int>("AppointmentSeq")
+        .StartsAt(1)
+        .IncrementsBy(1);
+
+      modelBuilder.HasSequence<int>("InvoiceSeq")
+        .StartsAt(1)
+        .IncrementsBy(1);
+
+      modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+    }
+
   }
 }

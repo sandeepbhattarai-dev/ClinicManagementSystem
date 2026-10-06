@@ -15,13 +15,13 @@ namespace ClinicMS.Domain.Entities
     public string PatientNumber { get; set; } = default!;
 
 
-		[Required]
-		[MaxLength(50)]
-		public string FirstName { get; set; } = default!;
+    [Required]
+    [MaxLength(50)]
+    public string FirstName { get; set; } = default!;
 
-		[Required]
-		[MaxLength(50)]
-		public string LastName { get; set; } = default!;
+    [Required]
+    [MaxLength(50)]
+    public string LastName { get; set; } = default!;
 
     public DateTime DateOfBirth { get; set; }
 
@@ -36,7 +36,10 @@ namespace ClinicMS.Domain.Entities
     [MaxLength(15)]
     public string Phone { get; set; } = default!;
 
+    [MaxLength(255)]
     public string? Email { get; set; }
+
+    [MaxLength(500)]
     public string? Address { get; set; }
 
 
@@ -46,6 +49,6 @@ namespace ClinicMS.Domain.Entities
 
     [Required]
     [MaxLength(50)]
-    public string CreatedById { get; set; } = default!;
+    public string CreatedById { get; set; } = "Self";
   }
 }
