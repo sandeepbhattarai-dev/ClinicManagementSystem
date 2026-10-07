@@ -32,5 +32,8 @@ namespace ClinicMS.Domain.Entities
 		public decimal ConsultationFee { get; set; }
 
     public bool IsActive { get; set; } = true;
+
+    // navigation
+    public utblApplicationUser? ApplicationUser { get; set; }
   }
 }

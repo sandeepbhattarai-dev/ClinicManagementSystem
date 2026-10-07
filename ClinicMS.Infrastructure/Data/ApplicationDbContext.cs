@@ -34,6 +34,5 @@ namespace ClinicMS.Infrastructure.Data
 
       modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
     }
-
   }
 }
