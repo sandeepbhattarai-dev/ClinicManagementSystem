@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ClinicMS.Domain.Entities
 {
@@ -50,15 +49,15 @@ namespace ClinicMS.Domain.Entities
     [MaxLength(50)]
     public string MedicationName { get; set; } = default!;
 
-    [Required]
+
     [MaxLength(100)]
     public string Dosage { get; set; } = default!;
 
-    [Required] 
+
     [MaxLength(100)]
     public string Frequency { get; set; } = default!;
 
-    [Range(1,90, ErrorMessage = "Medication can be given for a single day to 3 months at a time")]
+    [Range(1, 90)]
     public int DurationDays { get; set; }
 
     [MaxLength(500)]

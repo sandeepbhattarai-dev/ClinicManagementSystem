@@ -2,7 +2,7 @@
 
 namespace ClinicMS.Domain.Entities
 {
-  internal class utblDepartment
+  public class utblDepartment
   {
     [Key]
     [Required]
@@ -10,14 +10,20 @@ namespace ClinicMS.Domain.Entities
     public string Id { get; set; } = Guid.NewGuid().ToString();
 
     [Required]
-    [StringLength(50, MinimumLength = 3, ErrorMessage = "Department Name needs to be of minimum 3 characters and maximum 50 characters long.")]
-    public string? Name { get; set; }
+    [StringLength(100)]
+    public string Name { get; set; } = default!;
 
     [StringLength(500)]
     public string? Description { get; set; }
 
     public bool IsActive { get; set; } = true;
 
-    public bool IsDeleted { get; set; } = false;
+    //public bool IsDeleted { get; set; } = false;
+
+
+    // navigation
+    public List<utblDoctor> Doctors { get; set; } = [];
+    public List<utblDepartment> Departments { get; set; } = [];
+    public List<utblAppointment> Appointments { get; set; } = [];
   }
 }

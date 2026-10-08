@@ -2,7 +2,7 @@
 
 namespace ClinicMS.Domain.Entities
 {
-  internal class utblDoctorSchedule
+  public class utblDoctorSchedule
   {
     [Key]
     [Required]
@@ -13,19 +13,18 @@ namespace ClinicMS.Domain.Entities
     [MaxLength(50)]
     public string DoctorId { get; set; } = default!;
 
-    [Required]
-    [MaxLength(50)]
-    public utblDoctor Doctor { get; set; } = default!;
-
     public DayOfWeek DayOfWeek { get; set; }
 
-    [Required]
-    public DateOnly DoctorVisitDate { get; set; }
+    //[Required]
+    //public DateOnly DoctorVisitDate { get; set; }
 
     public TimeSpan StartTime { get; set; }
-    public TimeSpan Endime { get; set; }
+    public TimeSpan EndTime { get; set; }
 
     public int SlotDurationMinutes { get; set; } = 30;
     public bool IsActive { get; set; } = true;
+
+    // navigation 
+    public utblDoctor? Doctor { get; set; }
   }
 }

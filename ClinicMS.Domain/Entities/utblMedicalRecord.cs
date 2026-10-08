@@ -37,5 +37,6 @@ namespace ClinicMS.Domain.Entities
     
     //navigation property
     public utblAppointment? Appointment { get; set; }
+    public utblDoctor? Doctor { get; set; }
   }
 }

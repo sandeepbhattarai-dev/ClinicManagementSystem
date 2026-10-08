@@ -8,11 +8,41 @@ namespace ClinicMS.Infrastructure.Data.Configuration
   {
     public void Configure(EntityTypeBuilder<utblDoctor> builder)
     {
-      builder.HasOne(x => x.ApplicationUser)
-        .WithOne()
-        .HasForeignKey(x => x.ApplicationUserId);
+      builder.HasKey(x => x.Id);
 
-      throw new NotImplementedException();
+      builder.HasOne(x => x.ApplicationUser) // nav in child
+        .WithOne() // nav in parent but not present here
+        .HasForeignKey<utblDoctor>(x => x.ApplicationUserId) // child, foreign key
+        .OnDelete(DeleteBehavior.Cascade);
+
+      builder.HasOne(c => c.Department)
+        .WithMany(p => p.Doctors)
+        .HasForeignKey(f => f.DepartmentId)
+        .OnDelete(DeleteBehavior.Restrict);
+
+      builder.Property(x => x.FullName)
+        .IsRequired();
+
+      builder.Property(x => x.Specialization)
+        .IsRequired();
+
+      builder.Property(x => x.LicenseNumber)
+        .IsRequired(true);
+
+      builder.HasIndex(x => x.LicenseNumber)
+        .IsUnique();
+
+      builder.ToTable(t => t.HasCheckConstraint(
+        name: "CK_UtblDoctor_LicenseNumber_ShouldNotBeNull",
+        sql: "LEN(TRIM([LicenseNumber])) > 0"
+        ));
+
+
+      builder.ToTable(x => x.HasCheckConstraint(
+        name: "CK_UtblDoctor_ConsultationFee_GreaterThanZero",
+        sql: "[ConsultationFee] >= 0"));
+
+      builder.HasQueryFilter(x => x.IsActive);
     }
   }
 }

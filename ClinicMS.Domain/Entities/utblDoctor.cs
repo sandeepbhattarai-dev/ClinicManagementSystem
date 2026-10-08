@@ -35,5 +35,12 @@ namespace ClinicMS.Domain.Entities
 
     // navigation
     public utblApplicationUser? ApplicationUser { get; set; }
+    public utblDepartment? Department { get; set; }
+    public List<utblDoctorSchedule>? DoctorSchedules { get; set; }
+    public List<utblAppointment>? Appointments { get; set; }
+    public List<utblMedicalRecord> MedicalRecords { get; set; } = [];
+
+    public List<utblPrescription> Prescriptions { get; set; } = [];
+    
   }
 }

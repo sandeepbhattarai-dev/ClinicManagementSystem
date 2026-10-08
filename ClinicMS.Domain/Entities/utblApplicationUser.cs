@@ -4,5 +4,6 @@ namespace ClinicMS.Domain.Entities
 {
   public class utblApplicationUser : IdentityUser
   {
+
   }
 }

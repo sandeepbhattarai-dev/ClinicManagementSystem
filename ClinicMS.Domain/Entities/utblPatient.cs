@@ -31,7 +31,6 @@ namespace ClinicMS.Domain.Entities
     [Required]
     public BloodGroup BloodGroup { get; set; }
 
-
     [Required]
     [MaxLength(15)]
     public string Phone { get; set; } = default!;
@@ -50,5 +49,10 @@ namespace ClinicMS.Domain.Entities
     [Required]
     [MaxLength(50)]
     public string CreatedById { get; set; } = "Self";
+
+
+    // navigation
+    public List<utblAppointment>? Appointments { get; set; }
+    public List<utblPrescription> Prescriptions { get; set; } = [];
   }
 }

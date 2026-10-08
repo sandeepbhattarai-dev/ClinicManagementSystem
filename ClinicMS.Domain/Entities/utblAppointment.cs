@@ -21,9 +21,11 @@ namespace ClinicMS.Domain.Entities
     [Required]
     [MaxLength(50)]
     public string DoctorId { get; set; } = default!;
+
     [Required]
-    [MaxLength (50)]
+    [MaxLength(50)]
     public string DepartmentId { get; set; } = default!;
+
     [Required]
     public DateOnly AppointmentDate { get; set; }
 
@@ -34,7 +36,7 @@ namespace ClinicMS.Domain.Entities
     [Required]
     public AppointmentStatus Status { get; set; }
 
-    public string? ChiefComplaint { get; set; }
+    public string ChiefComplaint { get; set; } = default!;
 
     [MaxLength(50)]
     [MinLength(10)]
@@ -42,16 +44,29 @@ namespace ClinicMS.Domain.Entities
 
     public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
     [Required]
-    public string? CreatedById { get; set; }
+    [MaxLength(50)]
+    public string CreatedById { get; set; } = default!;
 
     public void CancelAppointment(string reason, string updatedByUserId)
     {
-      if (string.IsNullOrWhiteSpace(reason) && reason.Length >= 10)
+      if (string.IsNullOrWhiteSpace(reason) || reason.Trim().Length < 10)
       {
-        throw new ArgumentException("A reason must be provided for cancelling. Reason needs to be of atleast 10 characters.");
+        throw new ArgumentException("A reason must be provided for cancelling. The reason must be atleast be 10 characters long.");
       }
-      Status = AppointmentStatus.Cancelled;
-      CancelReason = reason;
+      else
+      {
+        Status = AppointmentStatus.Cancelled;
+        CancelReason = reason;
+      }
     }
+
+    public utblPatient? Patient { get; set; }
+    public utblDoctor? Doctor { get; set; }
+    public utblDepartment? Department { get; set; }
+
+    public utblMedicalRecord? MedicalRecord { get; set; }
+    public utblPrescription? Prescription { get; set; }
+
+
   }
 }
