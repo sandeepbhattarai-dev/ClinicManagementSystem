@@ -41,8 +41,10 @@ namespace ClinicMS.Infrastructure.Data.Configuration
       builder.ToTable(x => x.HasCheckConstraint(
         name: "CK_UtblDoctor_ConsultationFee_GreaterThanZero",
         sql: "[ConsultationFee] >= 0"));
+      builder.Property(x => x.ConsultationFee)
+        .HasPrecision(7, 2);
 
-      builder.HasQueryFilter(x => x.IsActive);
+      builder.HasQueryFilter(x => x.IsActive && x.Department!.IsActive);
     }
   }
 }

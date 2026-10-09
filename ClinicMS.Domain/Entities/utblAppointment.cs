@@ -67,6 +67,8 @@ namespace ClinicMS.Domain.Entities
     public utblMedicalRecord? MedicalRecord { get; set; }
     public utblPrescription? Prescription { get; set; }
 
+    public utblInvoice? Invoice { get; set; }
+
 
   }
 }

@@ -10,7 +10,7 @@ namespace ClinicMS.Domain.Entities
     public string Id { get; set; } = Guid.NewGuid().ToString();
 
     [Required]
-    [MaxLength(50)]
+    [MaxLength(450)]
     public string ApplicationUserId { get; set; } = default!;
 
     [Required]

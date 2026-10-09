@@ -54,5 +54,6 @@ namespace ClinicMS.Domain.Entities
     // navigation
     public List<utblAppointment>? Appointments { get; set; }
     public List<utblPrescription> Prescriptions { get; set; } = [];
+    public List<utblInvoice> Invoices { get; set; } = [];
   }
 }

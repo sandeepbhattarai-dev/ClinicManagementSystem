@@ -45,6 +45,8 @@ namespace ClinicMS.Infrastructure.Data.Configuration
         .WithMany(x => x.MedicalRecords)
         .HasForeignKey(x => x.CreatedById)
         .OnDelete(DeleteBehavior.Restrict);
+
+      builder.HasQueryFilter(m => m.Doctor!.IsActive);
     }
   }
 }

@@ -23,10 +23,15 @@ namespace ClinicMS.Domain.Entities
     public DateTime IssuedOn { get; set; } = DateTime.UtcNow;
     public InvoiceStatus Status { get; set; }
 
-    public decimal TotalAmount { get; set; }
+    public decimal TotalAmount { get; private set; }
 
     public DateTime PaidOn { get; set; }
     public PaymentMethod PaymentMethod { get; set; }
+
+    // nav
+    public utblPatient? Patient { get; set; }
+    public utblAppointment? Appointment { get; set; }
+    public List<utblInvoiceItem> InvoiceItems { get; set; } = [];
   }
 
   public class utblInvoiceItem
@@ -44,12 +49,15 @@ namespace ClinicMS.Domain.Entities
     public string Description { get; set; } = default!;
 
     [Range(1, int.MaxValue)]
-    public string Quantity { get; set; } = default!;
+    public int Quantity { get; set; } = default!;
 
     [Range(0, double.MaxValue)]
     public decimal UnitPrice { get; set; }
 
     [Range(1, double.MaxValue)]
-    public decimal LineTotal { get; set; }
+    public decimal LineTotal { get; private set; }
+
+    // nav 
+    public utblInvoice? Invoice { get; set; }
   }
 }

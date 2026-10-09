@@ -23,7 +23,7 @@ namespace ClinicMS.Domain.Entities
 
     // navigation
     public List<utblDoctor> Doctors { get; set; } = [];
-    public List<utblDepartment> Departments { get; set; } = [];
+    //public List<utblDepartment> Departments { get; set; } = [];
     public List<utblAppointment> Appointments { get; set; } = [];
   }
 }

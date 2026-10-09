@@ -32,7 +32,8 @@ namespace ClinicMS.Infrastructure.Data.Configuration
       builder.Property(x => x.IsActive)
         .HasDefaultValue(true);
 
-      builder.HasQueryFilter(x => x.IsActive);
+      //builder.HasQueryFilter(x => x.IsActive);
+      builder.HasQueryFilter(s => s.IsActive && s.Doctor!.IsActive);
 
     }
   }

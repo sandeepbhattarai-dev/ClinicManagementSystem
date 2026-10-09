@@ -29,14 +29,14 @@ namespace ClinicMS.Infrastructure.Data.Configuration
 
 
       builder.Property(x => x.IssuedOn)
-        .HasDefaultValueSql("GETUTCNOW()");
+        .HasDefaultValueSql("GETUTCDATE()");
 
       //builder.HasMany(c => c.Items) // using child centric approach
       //  .WithOne(p => p.Prescription)
       //  .HasForeignKey(x => x.PrescriptionId)
       //  .OnDelete(DeleteBehavior.Restrict);
 
-
+      builder.HasQueryFilter(x => x.Patient!.IsActive);
     }
   }
 }

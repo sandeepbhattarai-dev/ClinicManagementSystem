@@ -52,6 +52,8 @@ namespace ClinicMS.Infrastructure.Data.Configuration
 
       builder.Property(x => x.CreatedById)
         .IsRequired();
+
+      builder.HasQueryFilter(a => a.Department!.IsActive);
     }
   }
 }

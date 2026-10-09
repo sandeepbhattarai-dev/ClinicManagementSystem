@@ -26,6 +26,8 @@ namespace ClinicMS.Infrastructure.Data.Configuration
 
       builder.Property(x => x.Instructions)
         .HasMaxLength(500);
+
+      builder.HasQueryFilter(s => s.Prescription!.Patient!.IsActive);
     }
   }
 }
