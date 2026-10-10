@@ -1,9 +1,11 @@
 ﻿using ClinicMS.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace ClinicMS.Infrastructure.Data
 {
-  public class ApplicationDbContext : DbContext
+  public class ApplicationDbContext : IdentityDbContext<utblApplicationUser, utblApplicationUserRoles, string>
   {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
@@ -14,7 +16,7 @@ namespace ClinicMS.Infrastructure.Data
     public DbSet<utblMedicalRecord> utblMedicalRecords { get; set; }
     public DbSet<utblPatient> utblPatients { get; set; }
     public DbSet<utblPrescription> utblPrescriptions { get; set; }
-    public DbSet<utblPrescriptionItem> utblPrescriptionsItem { get; set; }
+    public DbSet<utblPrescriptionItem> utblPrescriptionsItems { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
